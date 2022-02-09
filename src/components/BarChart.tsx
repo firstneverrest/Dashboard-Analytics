@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import React, { FC, useState } from 'react';
+import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { ChartContainer } from './Container.styled';
+import faker from '@faker-js/faker';
 
 interface ChartProps {
   data: any;
@@ -26,13 +27,17 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = ({}) => {
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+const BarChart: FC = ({}) => {
   const [chartData, setChartData] = useState({
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels,
     datasets: [
       {
         label: 'Legend',
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: labels.map(() =>
+          faker.datatype.number({ min: -1000, max: 1000 })
+        ),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(255, 159, 64, 0.2)',
@@ -56,18 +61,16 @@ const BarChart = ({}) => {
     ],
   });
 
-  const options: any = {
+  const options = {
+    responsive: true,
     plugins: {
+      legend: {
+        position: 'top' as const,
+        align: 'end' as const,
+      },
       title: {
         display: true,
         text: 'Bar Chart',
-      },
-      legend: {
-        display: true,
-        align: 'end',
-        labels: {
-          color: 'rgb(255, 99, 132)',
-        },
       },
     },
   };
