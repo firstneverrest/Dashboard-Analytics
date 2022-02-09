@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NavbarContainer = styled.div`
+export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -15,5 +15,14 @@ export const NavbarContainer = styled.div`
   h2 {
     font-size: 24px;
     color: ${(props) => props.theme.colors.white};
+  }
+`;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 8px;
   }
 `;
