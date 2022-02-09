@@ -7,6 +7,6 @@ export const Container = styled.div`
 `;
 
 export const ChartContainer = styled.div`
-  height: 500px;
   width: 500px;
+  margin: 1rem 0;
 `;
