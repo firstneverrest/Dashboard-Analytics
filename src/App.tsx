@@ -6,6 +6,7 @@ import { Container } from './components/Container.styled';
 import LineChart from './components/LineChart';
 import Sidebar from './components/Sidebar';
 import theme from './theme';
+import { HoverCard, GenerateQRCode } from './components';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Sidebar />
         <BarChart />
         <LineChart />
+        <HoverCard />
+        <GenerateQRCode text="Chitsanupong Tangvasinkul" />
       </Container>
     </ThemeProvider>
   );
