@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   Title,
   SidebarContainer,
@@ -16,7 +16,7 @@ import { ReactComponent as ContactIcon } from '@/images/contact.svg';
 import { ReactComponent as MailIcon } from '@/images/mail.svg';
 import { ReactComponent as TaskIcon } from '@/images/task.svg';
 
-const Sidebar = () => {
+const Sidebar: FC = () => {
   return (
     <SidebarContainer>
       <LogoContainer>
